@@ -1,6 +1,8 @@
-var message = newFunction ()
+var message = newFunction();
 
 function newFunction() {
-    return 'Hello World'
+	return 'Hello World';
 }
-Console. log(message);
+
+console.log(message);
+
