@@ -5,5 +5,5 @@
         "../scss/normalize.scss"
     ],
     "names": [],
-    "file": "normalize.css"
+    "file": "normalize.min.css"
 }
