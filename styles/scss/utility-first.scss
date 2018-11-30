@@ -39,6 +39,8 @@ $font-sizes: (
   }
 }
 
+@include modifiers($font-sizes,'font-size');
+
 @each $space in $spaceamounts {
   @each $side in $sides {
 

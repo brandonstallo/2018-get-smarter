@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/web-components.scss"
+    ],
+    "names": [],
+    "file": "web-components.min.css"
+}
