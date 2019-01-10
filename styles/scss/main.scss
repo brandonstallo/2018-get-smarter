@@ -1,7 +1,6 @@
 html {
     color: #222;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 16px;
     line-height: 1.4;
 }
 
@@ -140,8 +139,7 @@ textarea {
         text-shadow: none !important;
     }
 
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
 
@@ -166,8 +164,7 @@ textarea {
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
@@ -176,20 +173,24 @@ textarea {
         display: table-header-group;
     }
 
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
 
-    p,
-    h2,
-    h3 {
+    p {
+        margin: 1.4rem;
+      }
+    
+    h2{
+        margin-top:2.8rem;
+    }
+    
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
 
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }
