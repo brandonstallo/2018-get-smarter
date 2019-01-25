@@ -8,9 +8,12 @@ class Calculator {
     
     }
 
-    add(a, b) {
+    add() {
       console.log('add');
-      a + b;
+    }
+
+    subtract(){
+      console.log('subtract');
     }
   }
 
@@ -38,16 +41,20 @@ const calculator = new Calculator();
           isCalculating = true
         
         values.push(parseInt(outputWindow.value));
-        //outputWindow.value = total;
-        
-
-
+console.log(values);
         if (method === '+'){
+          calculator.add();
             values.forEach(function(element, index){
               total += values[index];
             });
           }
-          console.log('total', total);
+        
+          if(method === '-'){
+            calculator.subtract();
+            values.forEach(function(element, index){
+              total -= values[index];
+            });
+          }
         
         outputWindow.value = total;
       
