@@ -24,6 +24,7 @@ const buttons = document.querySelectorAll('[data-calculator-button]')
 const numberButtons = document.querySelectorAll('[data-button-type=number]');
 const operatorButtons = document.querySelectorAll('[data-button-type=calculation]');
 const equalButton = document.querySelector('[data-equal-button]');
+const clearButton = document.querySelector('[data-clear-button]');
 const outputWindow = document.getElementById('output-window');
 let buttonValue;
 let buttonType;
@@ -41,20 +42,33 @@ var displayResults = function () {
 
 var updateTotal = function () {
   let value = parseInt(outputWindow.value) || 0;
-  
-  if (!total){
+
+  if (!total) {
     return total = value
   }
-  
+
   switch (operation) {
     case '+':
-    total += value;
-    break;
+      total += value;
+      break;
+
     case '-':
-    total -= value
-    break;
-  }
+      total -= value
+      break;
+
+    case '*':
+      total *= value
+      break;
+    
+    case '/':
+      total /= value
+      break;
+    }
 }
+
+clearButton.addEventListener('click', () => {
+  outputWindow.value = '';
+})
 
 equalButton.addEventListener('click', () => {
   displayResults();
@@ -73,14 +87,15 @@ operatorButtons.forEach(element => {
   });
 
 });
+
 numberButtons.forEach(element => {
   element.addEventListener('click', () => {
-    
+
     if (totalHasBeenDisplayed) {
       outputWindow.value = '';
       totalHasBeenDisplayed == false;
     }
-    
+
     buttonValue = element.getAttribute('data-calculator-button');
     outputWindow.value += buttonValue;
   });

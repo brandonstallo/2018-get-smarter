@@ -7,7 +7,7 @@
   display: block;
   margin: 4px auto;
   max-width: 250px;
-  text-align: center;
+  text-align: left;
 }
 
 .output-window {
@@ -35,5 +35,21 @@
   list-style-type: none;
   text-align: center;
   width: 21%;
+}
+
+.buttons-container {
+  position: relative;
+}
+
+.equal-button {
+  bottom: 0;
+  position: absolute;
+  top: 3em;
+  right: 2px;
+}
+
+.equal-button .buttons {
+  background-color: red;
+  height: 100%;
 }
 /*# sourceMappingURL=calculator.css.map */
