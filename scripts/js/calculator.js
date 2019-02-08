@@ -29,7 +29,7 @@ let buttonValue;
 let buttonType;
 let method;
 let values = [];
-let total = 0;
+let total;
 let operation;
 let totalHasBeenDisplayed = false;
 
@@ -41,20 +41,19 @@ var displayResults = function () {
 
 var updateTotal = function () {
   let value = parseInt(outputWindow.value) || 0;
-
+  
+  if (!total){
+    return total = value
+  }
+  
   switch (operation) {
     case '+':
-      total += value;
-      break;
-
-    case '-':
-    console.log('value', value)
-
+    total += value;
     break;
-    
+    case '-':
+    total -= value
+    break;
   }
-  console.log('total', total)
-
 }
 
 equalButton.addEventListener('click', () => {
