@@ -1,15 +1,15 @@
 $spaceamounts: (
   0: 0,
-1: .19385,
-  2: .23257,
-  3: .27908,
-  4: .3349,
-  5: .40188,
-  6: .48225,
-  7: .5787,
-  8: .69444,
-  9: .83333,
-  10: .996
+  1: 4,
+  2: 8,
+  3: 12,
+  4: 16,
+  5: 20,
+  6: 24,
+  7: 32,
+  8: 40,
+  9: 48,
+  10: 60
 );
 
 $sides: (top, right, bottom, left, all); // Leave this variable alone
@@ -24,9 +24,9 @@ $color-list: (
 $font-sizes: (
   small: 12px,
   medium: 16px, 
-  large: 20px, 
-  x-large: 24px, 
-  xx-large: 32px
+  large: 24px, 
+  x-large: 32px, 
+  xx-large: 48px
 );
 
 @mixin modifiers($map, $attribute, $prefix: '.', $separator: '-', $base: 'base') {
@@ -49,19 +49,19 @@ $font-sizes: (
  
     @if $side == 'all' {
       .m#{nth($space, 1)} {
-        margin:  #{nth($space, 2)}rem; 
+        margin:  #{nth($space, 2)}px; 
       }
 
       .p#{nth($space, 1)} {
-        padding: #{nth($space, 2)}rem;
+        padding: #{nth($space, 2)}px;
       }
     } @else {
       .m#{str-slice($side, 0, 1)}-#{nth($space, 1)} {
-        margin-#{$side}: #{nth($space, 2)}rem;
+        margin-#{$side}: #{nth($space, 2)}px;
       }
 
       .p#{str-slice($side, 0, 1)}-#{nth($space, 1)} {
-        padding-#{$side}: #{nth($space, 2)}rem;
+        padding-#{$side}: #{nth($space, 2)}px;
       }
     }
   }

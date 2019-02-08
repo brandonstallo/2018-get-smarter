@@ -1,74 +1,88 @@
-
 'use strict';
 
 class Calculator {
 
-  constructor(){
+  constructor() {
     console.log('calculator js');
-    
-    }
 
-    add() {
-      console.log('add');
-    }
-
-    subtract(){
-      console.log('subtract');
-    }
   }
+
+  add() {
+    console.log('add');
+  }
+
+  subtract() {
+    console.log('subtract');
+  }
+}
 
 const calculator = new Calculator();
 
 
-  const buttons = document.querySelectorAll('[data-calculator-button]')
-  const outputWindow = document.getElementById('output-window')  ;
-  let buttonValue;
-  let buttonType;
-  let method;
-  let values = [];
-  let isCalculating = false;
+const buttons = document.querySelectorAll('[data-calculator-button]')
 
-  buttons.forEach(element => {
+const numberButtons = document.querySelectorAll('[data-button-type=number]');
+const operatorButtons = document.querySelectorAll('[data-button-type=calculation]');
+const equalButton = document.querySelector('[data-equal-button]');
+const outputWindow = document.getElementById('output-window');
+let buttonValue;
+let buttonType;
+let method;
+let values = [];
+let total = 0;
+let operation;
+let totalHasBeenDisplayed = false;
+
+var displayResults = function () {
+  updateTotal();
+  outputWindow.value = total;
+  total = '';
+};
+
+var updateTotal = function () {
+  let value = parseInt(outputWindow.value) || 0;
+
+  switch (operation) {
+    case '+':
+      total += value;
+      break;
+
+    case '-':
+    console.log('value', value)
+
+    break;
     
-    element.addEventListener('click', () => {
+  }
+  console.log('total', total)
 
-      buttonValue = element.getAttribute('data-calculator-button');
-      buttonType = element.getAttribute('data-button-type');
+}
 
-      if (buttonType === 'calculation'){
-          let method = buttonValue;
-          let total = 0;
-          isCalculating = true
-        
-        values.push(parseInt(outputWindow.value));
-console.log(values);
-        if (method === '+'){
-          calculator.add();
-            values.forEach(function(element, index){
-              total += values[index];
-            });
-          }
-        
-          if(method === '-'){
-            calculator.subtract();
-            values.forEach(function(element, index){
-              total -= values[index];
-            });
-          }
-        
-        outputWindow.value = total;
-      
-      } else{
+equalButton.addEventListener('click', () => {
+  displayResults();
+  totalHasBeenDisplayed = true;
 
-        if(isCalculating) {outputWindow.value = ''}
-        outputWindow.value += parseInt(buttonValue);
-        isCalculating = false
+});
 
-      }
+operatorButtons.forEach(element => {
 
+  element.addEventListener('click', () => {
+    operation = element.getAttribute('data-calculator-button');
 
-    });
+    updateTotal()
+
+    outputWindow.value = '';
   });
-  
-  
 
+});
+numberButtons.forEach(element => {
+  element.addEventListener('click', () => {
+    
+    if (totalHasBeenDisplayed) {
+      outputWindow.value = '';
+      totalHasBeenDisplayed == false;
+    }
+    
+    buttonValue = element.getAttribute('data-calculator-button');
+    outputWindow.value += buttonValue;
+  });
+});

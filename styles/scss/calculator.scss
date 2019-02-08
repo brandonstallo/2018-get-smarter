@@ -1,13 +1,27 @@
 .container {
-    border:1px solid pink;
+    background:#EEE;
+    border:1px solid grey;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px grey;
     display: block;
-    margin:0 auto;
-    max-width: 360px;
+    margin:4px auto;
+    max-width: 250px;
     text-align: center;
-    width:90%;
+}
+
+.output-window{    
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    text-align: right;
+    width: 100%;
 }
 
 .buttons {
+    background-color:white;
+    border:1px solid grey;
+    border-radius: 4px;
     display: block;
     width:100%;
     &-list{
@@ -15,6 +29,6 @@
         display: inline-block;
         list-style-type: none;
         text-align: center;
-        width:28%;
+        width:21%;
     }
 }

@@ -1,13 +1,29 @@
 .container {
-  border: 1px solid #000;
+  background: #EEE;
+  border: 1px solid grey;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px grey;
+          box-shadow: 2px 2px 2px grey;
   display: block;
-  margin: 0 auto;
-  max-width: 360px;
+  margin: 4px auto;
+  max-width: 250px;
   text-align: center;
-  width: 90%;
+}
+
+.output-window {
+  border: 1px solid grey;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  text-align: right;
+  width: 100%;
 }
 
 .buttons {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
   display: block;
   width: 100%;
 }
@@ -18,6 +34,6 @@
   display: inline-block;
   list-style-type: none;
   text-align: center;
-  width: 28%;
+  width: 21%;
 }
 /*# sourceMappingURL=calculator.css.map */
